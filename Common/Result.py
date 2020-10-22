@@ -11,4 +11,14 @@ class Result(object):
     def __init__(self, **kwargs):
         pass
 
+    # 生产Response结果
+    def create_result(self):
+        pass
 
+    # 成功
+    def success(self, res):
+        pass
+
+    # 失败
+    def fail(self, res):
+        pass
