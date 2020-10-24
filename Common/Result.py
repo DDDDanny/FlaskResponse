@@ -8,8 +8,14 @@ from flask import jsonify
 
 
 class Result(object):
-    def __init__(self, **kwargs):
-        pass
+    def __init__(self, data=None, msg='请求成功'):
+        """
+        构造函数，初始化数据
+        :param data: Response Data
+        :param msg: Response Message
+        """
+        self.data = data
+        self.msg = msg
 
     # 生产Response结果
     def create_result(self):
@@ -22,3 +28,7 @@ class Result(object):
     # 失败
     def fail(self, res):
         pass
+
+
+if __name__ == '__main__':
+    Result()
