@@ -4,7 +4,7 @@
 # @File    : Constant.py
 # @describe: 常量
 
-Constant = {
-    'SUCCESS_CODE': 0,
-    'ERROR_CODE': -1,
-}
+# 成功码
+SUCCESS_CODE = 0
+# 失败、错误码
+ERROR_CODE = -1

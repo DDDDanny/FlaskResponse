@@ -4,7 +4,7 @@
 # @File    : Result.py
 # @describe: 封装处理请求结果
 
-from flask import jsonify
+from Common.Constant import SUCCESS_CODE, ERROR_CODE
 
 
 class Result(object):
@@ -16,19 +16,28 @@ class Result(object):
         """
         self.data = data
         self.msg = msg
+        self.code = SUCCESS_CODE
 
     # 生产Response结果
     def create_result(self):
-        pass
+        base = {
+            'code': self.code,
+            'msg': self.msg
+        }
+        if self.data is not None:
+            base['data'] = self.data
+        return base
 
     # 成功
-    def success(self, res):
-        pass
+    def success(self):
+        self.code = SUCCESS_CODE
+        return self.create_result()
 
     # 失败
-    def fail(self, res):
-        pass
+    def fail(self):
+        self.code = ERROR_CODE
+        return self.create_result()
 
 
 if __name__ == '__main__':
-    Result()
+    Result().success()
