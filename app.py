@@ -6,6 +6,7 @@ from Common.Error import error_response, handle_404_error, handle_500_error
 
 app = Flask(__name__)
 
+# 注册异常处理方法
 app.register_error_handler(404, handle_404_error)
 app.register_error_handler(500, handle_500_error)
 
